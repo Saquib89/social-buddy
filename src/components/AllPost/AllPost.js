@@ -66,7 +66,7 @@ const AllPost = (props) => {
                     </Typography>
                     <br/>
                     <Link to={`/post/${id}`}>
-                        <Button size="small" style={{textDecoration:'none', target:'_blank', float:'right'}}>Details</Button>
+                        <Button size="small" style={{textDecoration:'none', target:'_blank', float:'right',backgroundColor:'#71ED61'}}>See More...</Button>
                     </Link>
                 </CardContent>
                 <CardActions disableSpacing>
