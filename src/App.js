@@ -1,24 +1,28 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Home from './components/Home/Home';
+import Header from './components/Header/Header';
+import PostDetails from './components/PostDetails/PostDetails';
+
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 function App() {
+
+  const myStyle = {
+    backgroundColor: "#0B2041",
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={myStyle}>
+    <Header/>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact><Home/></Route>
+          <Route path="/post/:id"><PostDetails/></Route>
+
+          <Route path="*"><h1>404 Not Found</h1></Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
